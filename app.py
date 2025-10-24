@@ -1,5 +1,6 @@
 import os
 import streamlit as st
+import langchain_community
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, UnstructuredURLLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import SentenceTransformerEmbeddings
