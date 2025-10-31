@@ -61,7 +61,7 @@ This project aims to solve that by developing a **Retrieval-Augmented Generation
 - **Sentence Transformers / BERT Embeddings** – vector representation of text  
 - **RAG Architecture** – retrieval + augmentation + generation pipeline  
 - **Vector Databases** – FAISS, Chroma for semantic similarity search  
-- **Large Language Models (LLMs)** – GPT, Llama for contextual response generation  
+- **Large Language Models (LLMs)** – GEMINI, Llama for contextual response generation  
 - **Prompt Engineering** – context optimization, query reranking  
 - **Explainability & Interpretability** – attention visualization, source citation  
 - **Streamlit + AWS** – web-based deployment and hosting  
@@ -79,14 +79,14 @@ This project aims to solve that by developing a **Retrieval-Augmented Generation
 - Generate **semantic embeddings** using:
   - Sentence Transformers  
   - BERT / MiniLM models  
-- Store embeddings in **Chroma** or **FAISS vector database**
+- Store embeddings in **Chroma** vector database**
 
 ### 3️⃣ Retrieval & Augmentation
 - Retrieve **top-k relevant chunks** via vector similarity  
 - Augment user prompt with contextual text from retrieved chunks  
 
 ### 4️⃣ Generation
-- Use **LLMs (GPT / Llama)** for answer generation  
+- Use **LLMs (GEMINI / Llama)** for answer generation  
 - Combine **retrieved context + user query** for grounded responses  
 
 ### 5️⃣ Explainability
@@ -98,7 +98,7 @@ This project aims to solve that by developing a **Retrieval-Augmented Generation
 - Evaluate accuracy, context relevance, and factual grounding  
 
 ### 7️⃣ Deployment
-- Package full RAG pipeline using `pickle` or `ONNX`  
+- Package full RAG pipeline using `pickle`
 - Deploy **Streamlit web app** for live Q&A with document upload support  
 - Host on **AWS EC2**, **Render**, or **Streamlit Cloud**
 
