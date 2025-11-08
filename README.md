@@ -104,14 +104,31 @@ This project aims to solve that by developing a **Retrieval-Augmented Generation
 
 ---
 
+<summary>📸 Click to view Streamlit UI screenshots</summary>
+
+#### PDF File Home & Result Page 1
+![Home Page](https://github.com/user-attachments/assets/0bb92053-ac5a-4164-a49e-10a58d038b34)
+
+#### PDF Home & Result Page 2
+![Home Page](https://github.com/user-attachments/assets/cf32013d-5445-4b90-a659-ce2562e3d27f)
+
+#### TEXT File Home & Result Page  
+![Result Page](https://github.com/user-attachments/assets/0e2be9a1-98ca-4306-b958-a107ce0e20ff)
+
+#### Web Scrapping  Home & Result Page  
+![Result Page](https://github.com/user-attachments/assets/1a0f9664-3279-47b8-974d-802b7900df54)
+
+---
+
 ## 🧩 Project Structure
 ```bash
 QnA-RAG-Chatbot/
 │
-├── app/
-│   ├── streamlit_app.py           # Main Streamlit UI file
+├── .env
+│    ├── API Keys
 │
-├── environment.yml                # Conda environment setup
-├── requirements.txt               # Python dependencies
+├── app.py
+│
+├── requirements.txt               
 
 
