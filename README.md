@@ -1,4 +1,5 @@
 # 🤖 Q&A Chatbot using RAG Architecture
+🔍 NLP • LLM • Vector Database • Semantic Search • Streamlit • Enterprise Knowledge Assistant
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
 ![NLP](https://img.shields.io/badge/Domain-NLP-green?logo=ai)
@@ -12,110 +13,93 @@
 ---
 
 ## 📘 Overview
-**Q&A Chatbot using RAG Architecture** is an **intelligent document-aware chatbot** designed to retrieve relevant content from large text corpora and generate grounded, context-aware answers using **Retrieval-Augmented Generation (RAG)**.
+**Q&A Chatbot using RAG Architecture** is an **intelligent document-aware conversational assistant** designed to answer user questions based on **retrieved context from PDFs, text files, or web sources**.
 
-This project integrates **NLP preprocessing**, **vector embeddings**, **semantic retrieval**, and **large language models (LLMs)** into a cohesive workflow — deployed via **Streamlit** for user interaction.
+This chatbot uses:
+- 🧠 **LLMs (GPT, Llama, Gemini) for natural answer generation**
+- 🔍 **Semantic retrieval via embeddings + VectorDB**
+- 🧩 **RAG (Retrieval–Augmented Generation)** to ensure responses remain grounded and factual
 
-It demonstrates **modern NLP and AI integration** across all layers — **retrieval, generation, and explainability** — making it ideal for **enterprise knowledge search**, **education**, and **research automation**.
+It supports **PDF upload, text upload, and web URL extraction**, making it an AI-powered search engine for **enterprise documents and academic knowledge retrieval**.
 
 ---
 
 ## 🎯 Problem Statement
-In many industries, users struggle to extract meaningful answers from lengthy or complex documents.  
-Traditional keyword-based search often fails to provide accurate, contextual, and grounded results.
+Traditional keyword-based search fails to extract accurate, contextual answers from long or complex documents.
 
-This project aims to solve that by developing a **Retrieval-Augmented Generation (RAG)** chatbot that:
-- Retrieves **relevant content** from large text datasets  
-- **Augments prompts** with retrieved context  
-- Generates **factually grounded responses** using **LLMs (GPT/Llama)**  
-- Cites **source references** for transparency and trustworthiness  
+This chatbot solves that by:
+- Searching semantically instead of with keywords  
+- Pulling only relevant text chunks  
+- Generating grounded answers using augmented LLM prompts  
+- Providing **source citations** to ensure answer transparency  
 
 ---
 
 ## 💼 Business Use Cases
 
-### 🛠 Customer Support
-- Automated product Q&A from **manuals, FAQs, and chat logs**  
-- Reduce response time and human support dependency  
-
-### ⚖️ Legal Firms
-- Query and summarize **contracts, case laws, or compliance documents**  
-- Improve legal research efficiency with **semantic retrieval**  
-
-### 🎓 Education
-- Create AI-powered **study assistants** for students  
-- Generate context-rich answers from **textbooks or lecture notes**  
-
-### 🏢 Enterprises
-- Internal chatbot for **knowledge base and policy document retrieval**  
-- Enhance employee productivity through instant information access  
-
-### 🔬 Research & Academia
-- Summarize findings from **academic papers and technical reports**  
-- Facilitate **multi-hop reasoning** and literature exploration  
+| Sector | Value |
+|--------|-------|
+| 🛠 Customer Support | Automated responses based on product manuals & FAQs |
+| ⚖ Legal Firms | Query case laws, summaries, clauses, & contracts |
+| 🎓 EdTech | AI study assistant for textbooks & lecture notes |
+| 🏢 Enterprises | Internal knowledge base assistant for policies & SOPs |
+| 🔬 Research | Academic paper summarization & literature search automation |
 
 ---
 
 ## 🧠 Skills Takeaway
-- **Natural Language Processing (NLP)** – preprocessing, tokenization, chunking  
-- **Sentence Transformers / BERT Embeddings** – vector representation of text  
-- **RAG Architecture** – retrieval + augmentation + generation pipeline  
-- **Vector Databases** – FAISS, Chroma for semantic similarity search  
-- **Large Language Models (LLMs)** – GEMINI, Llama for contextual response generation  
-- **Prompt Engineering** – context optimization, query reranking  
-- **Explainability & Interpretability** – attention visualization, source citation  
-- **Streamlit + AWS** – web-based deployment and hosting  
+- Text preprocessing, tokenization & chunking  
+- **SentenceTransformers / BERT embeddings**
+- **RAG — Retrieval + Augmentation + LLM generation**
+- **VectorDB search using Chroma / FAISS**
+- **Prompt engineering & context optimization**
+- **Explainability using relevance scores & attention visualization**
+- **Streamlit deployment (Cloud / AWS EC2)**
 
 ---
 
-## 🗺️ Project Workflow & Approach
+## 🗺️ Project Workflow & Architecture
 
-### 1️⃣ Data Pipeline
-- Load **PDFs, text files, or web content**  
-- Preprocess using **regex**, **stopword removal**, and **sentence chunking**  
-- Store cleaned text for embedding and retrieval
+```
+User Query ➜ Vector Retrieval (Top-K) ➜ Context Augmentation ➜ LLM Generation ➜ Final Answer + Sources
+```
 
-### 2️⃣ Feature Engineering
-- Generate **semantic embeddings** using:
-  - Sentence Transformers  
-  - BERT / MiniLM models  
-- Store embeddings in **Chroma** vector database**
+### 🔹 Data Pipeline
+- Accepts PDFs, text files, web links  
+- Cleans & splits documents into semantic chunks
 
-### 3️⃣ Retrieval & Augmentation
-- Retrieve **top-k relevant chunks** via vector similarity  
-- Augment user prompt with contextual text from retrieved chunks  
+### 🔹 Embeddings & VectorDB
+- Sentence-Transformer / MiniLM models for embeddings  
+- Stores vectors in **Chroma** or **FAISS** for similarity search
 
-### 4️⃣ Generation
-- Use **LLMs (GEMINI / Llama)** for answer generation  
-- Combine **retrieved context + user query** for grounded responses  
+### 🔹 RAG-based Answer Generation
+- Dynamic prompt = **Retrieved Context + User Query**
+- LLM produces factual and grounded answer
 
-### 5️⃣ Explainability
-- Display **retrieved document sources** and **relevance scores**  
-- Visualize **attention heatmaps** to highlight reasoning paths  
+### 🔹 Explainability
+- Document-source citations
+- Relevance scores
+- Attention heatmaps (optional)
 
-### 6️⃣ Evaluation
-- Test on **multi-hop queries**, ambiguity handling, and long-form questions  
-- Evaluate accuracy, context relevance, and factual grounding  
-
-### 7️⃣ Deployment
-- Package full RAG pipeline using `pickle`
-- Deploy **Streamlit web app** for live Q&A with document upload support  
-- Host on **AWS EC2**, **Render**, or **Streamlit Cloud**
+### 🔹 Deployment
+- Multi-page **Streamlit Web App**
+- Hosted on **Streamlit Cloud / AWS EC2 / Render**
+- `.env` for API keys and local security
 
 ---
 
-<summary>📸 Click to view Streamlit UI screenshots</summary>
+## 📸 Application UI Screenshots
 
-#### PDF File Home & Result Page 1
+### 📌 PDF Input – Home & Output Page 1
 ![Home Page](https://github.com/user-attachments/assets/0bb92053-ac5a-4164-a49e-10a58d038b34)
 
-#### PDF Home & Result Page 2
+### 📌 PDF Input – Output Page 2
 ![Home Page](https://github.com/user-attachments/assets/cf32013d-5445-4b90-a659-ce2562e3d27f)
 
-#### TEXT File Home & Result Page  
+### 📌 Text Input – Results Page
 ![Result Page](https://github.com/user-attachments/assets/0e2be9a1-98ca-4306-b958-a107ce0e20ff)
 
-#### Web Scrapping  Home & Result Page  
+### 📌 Web Scraping – Results Page
 ![Result Page](https://github.com/user-attachments/assets/1a0f9664-3279-47b8-974d-802b7900df54)
 
 ---
@@ -124,11 +108,31 @@ This project aims to solve that by developing a **Retrieval-Augmented Generation
 ```bash
 QnA-RAG-Chatbot/
 │
-├── .env
-│    ├── API Keys
+├── .env                      # API keys & environment config
 │
-├── app.py
+├── app.py                    # Streamlit web app
 │
-├── requirements.txt               
+└── requirements.txt          # Dependencies
+```
+
+---
+
+## 🛠 Run the Project Locally
+
+Install dependencies:
+```
+pip install -r requirements.txt
+```
+
+Start the Streamlit app:
+```
+streamlit run app.py
+```
+
+Add your API keys inside:
+```
+.env
+```
+
 
 
